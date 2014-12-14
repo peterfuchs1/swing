@@ -4,7 +4,10 @@
 package code;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.GridLayout;
+
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -39,7 +42,7 @@ public class MyPanel extends JPanel {
 		
 		this.setLayout(new GridLayout(5,1));
 		line1=new JPanel();
-		line1.add(new JLabel("Enter a new combinations (number, character)"));
+		line1.add(new JLabel("Enter a new combination (number, character)"));
 		line1.setBorder(BorderFactory.createEmptyBorder(5, 10, 10, 10));
 		this.add(line1);
 		
@@ -59,22 +62,26 @@ public class MyPanel extends JPanel {
 		line2.add(jbAdd);
 		this.add(line2,BorderLayout.CENTER);		
 		
-		JLabel line3=new JLabel("Enter a text with the pattern number.number.number. and so on...");
+		JLabel line3=new JLabel("Enter a text with the pattern number"+
+				Enigma.DELIMITER+"number"+
+				Enigma.DELIMITER+"number and so on...");
 		this.add(line3);
-		line4=new JPanel(new GridLayout(1,3,5,5));
+		line4=new JPanel(new BorderLayout(5,5));
 		JLabel ltoConvert=new JLabel("Enter the text here:");
 		jtfToConvert = new JTextField(COLUMNS);
 		jtfToConvert.addActionListener(c);
 		jbConvert= new JButton("convert");
 		jbConvert.addActionListener(c);
-		line4.add(ltoConvert);
-		line4.add(jtfToConvert);
-		line4.add(jbConvert);
+		line4.add(ltoConvert, BorderLayout.WEST);
+		line4.add(jtfToConvert, BorderLayout.CENTER);
+		line4.add(jbConvert, BorderLayout.EAST);
 		this.add(line4);
 		line5=new JPanel(new BorderLayout(5,5));
 		JLabel ldesc=new JLabel("The result:");
 		
 		lResult=new JLabel("no result");
+		
+		lResult.setFont(new Font("Arial", Font.BOLD|Font.ITALIC, 18));
 		line5.add(ldesc, BorderLayout.WEST);
 		line5.add(lResult, BorderLayout.CENTER);
 		this.add(line5);

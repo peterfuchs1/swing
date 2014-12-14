@@ -28,7 +28,7 @@ import javax.swing.JTextField;
 public class MyController extends WindowAdapter implements ActionListener {
 	private MyPanel p;
 	private MyFrame f;
-	private CodeTable t;
+	private Enigma t;
 
 	/**
 	 * Konstruktor Bekommt ein StartStoppable zur Steuerung
@@ -38,7 +38,7 @@ public class MyController extends WindowAdapter implements ActionListener {
 	public MyController() {
 		p = new MyPanel(this);
 		f = new MyFrame(p, "My simple Enigma", this);
-		t = new CodeTable();
+		t = new Enigma();
 	}
 
 	/**

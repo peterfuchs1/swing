@@ -40,7 +40,7 @@ public class TestEnigmaA {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		CodeTable t=new CodeTable();
+		Enigma t=new Enigma();
 		// Insert all pairs with key and value
 		for(String[] pair:values){
 			t.add(pair[0], pair[1].charAt(0));
